@@ -1,0 +1,522 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: whitesmoke;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;     
+}
+
+:root{
+    --pink:#e40d4a;
+    --darkblue:#04042D;
+    --lightblue:#1A5276;
+    --black:#000000;
+    --white:#fff;
+
+}
+
+
+img{
+    width: 100%;
+}
+
+.logo{
+    text-shadow: none;
+    font-style: italic;
+    font-weight: 600;
+}
+
+/*==============typography=========*/
+
+h1{
+    font-size: 1.75rem;
+    color:var(--white);
+    cursor: default;
+    text-shadow: -5px 2px 2px var(--black);
+}
+
+h2{
+    font-size: 1.25rem;
+    text-shadow: 2px 3px 2px var(--black);
+}
+a{
+    text-decoration: none;
+}
+
+p{
+    cursor: default;
+    color: var(--white);
+    text-shadow: 1px 4px 3px var(--black);
+}
+
+
+/*==========================================
+                pre-next-button
+=========================================*/         
+
+
+#btn-prev,#btn-next{
+    position: relative;
+    font-weight: 400;
+    margin: 1em .5em;
+    padding: .3em;
+    padding-left: 1.7em;
+    background-color:var(--pink) ;
+    border: none;
+    border-radius: .3rem;
+    width: 100px;
+    transition: all .6s;
+}
+
+#btn-prev{
+    padding-left: 0;
+    padding-right: 1em;
+}
+
+.arrow{
+    margin-inline: .2em;
+    opacity: 0;
+    transition: all .6s;
+}
+
+#btn-prev .arrow{
+    margin-right: .4em;
+}
+
+#btn-prev:hover{
+    padding-right: 0em;
+    background-color: var(--darkblue);
+}
+
+#btn-prev:hover .arrow{
+    opacity: 1;
+}
+
+#btn-next:hover{
+    padding-left: .7em;
+    background-color: var(--darkblue);
+}
+
+#btn-next:hover .arrow{
+    opacity: 1;
+}
+
+
+
+/*===============layout===============*/
+
+
+.container{
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    padding-block: 2rem;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em 1.5em;
+    border-radius: 3rem;
+    background-color: var(--darkblue);
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+}
+
+.nav-list li{
+    margin-left: .5rem;
+}
+
+.nav-list .btn{
+    background:-webkit-linear-gradient(var(--darkblue),var(--lightblue)) ; 
+    padding: .3em 1em;
+    border-radius: 2em;
+    box-shadow: 1px 1px 5px var(--white);
+    border: none;
+}
+
+.nav-list .btn:hover{
+    box-shadow: 1px 3px 5px var(--white);
+    background:-webkit-linear-gradient(var(--lightblue),var(--darkblue) ) ;
+}
+
+@media (max-width:600px) {
+    nav{
+        flex-direction: column;
+        height: 15rem;
+        padding-block: 2em;
+    }
+    .nav-list{
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .nav-list li{
+        margin: 0;
+        margin-top: 1.3em;
+    }
+    .nav-list .btn{
+        width: 100%;
+    }
+}
+
+
+.container-flex{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    padding-bottom: 2.5rem;
+    /* border: 2px solid green; */
+}
+
+.container-flex:nth-child(2) .articles{
+    order: 2;
+}
+
+.container-flex:nth-child(2) .orbits{
+    order: 1;
+}
+
+.articles{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 550px;
+}
+
+.articles a{
+    height: 28%;
+}
+
+.article{
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: hard-light;
+    height: 100%;
+    max-width:95%;
+    background-color:var(--darkblue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: .5rem;
+}
+
+.article:hover{
+    background-blend-mode: exclusion;
+    align-items: center;
+}
+
+.article:hover h1{
+    color: var(--pink);
+    font-weight: 700;
+    text-shadow: -5px 2px 2px var(--black);
+}
+
+.article:hover p{
+    font-weight: 700;
+    text-shadow: 1px 4px 3px var(--black);
+}
+/* 
+.article1{
+    background-image: url(/images/onepiece.png);
+}
+
+.article2{
+    background-image: url(/images/blackclover.png);
+}
+
+.article3{
+    background-image: url(/images/jujutsu.png);
+    background-position:top center;
+}
+
+.article4{
+    background-image: url(/images/Chainsaw.png);
+    background-position:top center;
+}
+
+.article5{
+    background-image: url(/images/myheroacademia.png);
+    background-position:top center;
+}
+
+.article6{
+    background-image: url(/images/onepunchman.jpg);
+    background-position:top center;
+}
+
+.article7{
+    background-image: url(/images/sololeveling.jpg);
+    background-position:top center;
+}
+
+.article8{
+    background-image: url(/images/haikyuu.jpg);
+    background-position:top center;
+}
+
+.article9{
+    background-image: url(/images/attack.png);
+    background-position: center;
+} */
+
+
+
+@media (max-width:700px) {
+    .container-flex{
+        flex-direction: column;
+    }
+
+    .articles{
+        width: 100%;
+        height: 400px;
+        order: 2;
+    }
+    .orbit{
+        order: 1;
+        margin-bottom: 2rem;
+    }
+    .article{
+        max-width: 100%;
+    }
+}
+
+
+/*================footer==============*/
+
+
+footer{
+    /* border: 2px solid green; */
+    padding-block: 0em 1em;
+}
+footer .container{
+    padding:.7em 1.5em;
+    /* border: 2px solid red; */
+    background-color: var(--lightblue);
+    border-radius: 2rem;
+}
+
+.footer-links{
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list{
+    list-style: none;
+    display: flex;
+}
+
+.footer-list li{
+    margin-right: 1em;
+}
+
+.footer-list li:hover{
+    text-shadow: 2px 4px 2px var(--darkblue);
+    color: var(--darkblue);
+}
+
+@media (max-width:520px) {
+    .footer-list{
+        flex-direction: column;
+    }
+    .footer-list li{
+        margin-top: .5em;
+    }
+    
+}
+
+/*====================================One piece page=======================*/
+
+
+.article-content span{
+    font-size: 1.2rem;
+    color: var(--pink);
+    font-weight: 700;
+}
+
+.article-content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.manga-chapters{
+    background-color: var(--pink);
+    max-width: 100%;
+    margin-block: 1em;
+    padding: 1em;
+}
+
+.manga-chapters:hover h2{
+    color: var(--black);
+    text-shadow: 2px 3px 2px var(--white);
+    
+}
+
+
+
+/*====================================
+          manga-chapters-reading
+=====================================*/
+
+
+.manga-reading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.manga-picture{
+    margin-top: 3em;
+}
+
+.manga-picture img{
+    margin-top: -.3em;
+}
+
+
+
+
+
+
+
+
+/*=================================================
+                Animation
+==================================================*/
+
+
+.orbit{
+
+    /* background-color: red; */
+
+    height: 22rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    position: relative;
+    display: grid;
+    place-content: center;
+}
+
+.center-img{
+    width: 5rem;
+    position: relative;
+    transform: translateY(-2.5rem);
+}
+
+.center-img img{
+    position: absolute;
+}
+
+.center-img img:last-child:hover{
+    opacity: 0;
+    transition: opacity 500ms;
+}
+
+.orbit-list{
+    position: relative;
+    list-style: none; 
+    top: -2rem;
+    left: .5rem;
+}
+.orbit-item:hover{
+    animation-play-state: paused;
+    z-index: 99;
+    border: 2px solid white;
+    box-shadow: 1px 1px 3px var(--black);
+}
+
+.orbit-item{
+
+    /* animation-play-state: paused; */
+
+    position: absolute;
+    height: 4rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: grid;
+    align-content: center;
+    animation-name: ashu;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.orbit-item:nth-child(2){
+    animation-delay: -1.25s;
+}
+
+.orbit-item:nth-child(3){
+    animation-delay: -2.5s;
+}
+
+.orbit-item:nth-child(4){
+    animation-delay: -3.75s;
+}
+
+.orbit-item:nth-child(5){
+    animation-delay: -5s;
+}
+
+.orbit-item:nth-child(6){
+    animation-delay: -6.25s;
+}
+
+.orbit-item:nth-child(7){
+    animation-delay: -7.5s;
+}
+
+.orbit-item:nth-child(8){
+    animation-delay: -8.75s;
+}
+
+@keyframes ashu{
+    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+
+@media (max-width:850px) {
+
+    .orbit{
+        height: 18rem;
+    }
+    .center-img{
+        width: 4.5rem;
+    }
+
+    .orbit-item{
+        height: 3.5rem;
+    }
+
+    @keyframes ashu{
+        from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+        to   { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+    }
+}
+
+@media (max-width:400px) {
+
+    .orbit{
+        height: 15rem;
+    }
+    .center-img{
+        width: 4rem;
+    }
+
+    .orbit-item{
+        height: 3rem;
+    }
+
+    @keyframes ashu{
+        from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+        to   { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+    }
+}
